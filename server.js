@@ -1,3 +1,14 @@
+⦁/*********************************************************************************
+*  WEB422 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Cameron Coenjarts Student ID: 162263172 Date: 1/22/2021
+*  Heroku Link: https://camccapi.herokuapp.com/
+*
+********************************************************************************/ 
+
 //Assignment 1
 
 const express = require("express");
