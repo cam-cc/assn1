@@ -49,7 +49,7 @@ app.get("/api/restaurants",async (req, res) => {
     var borough = req.query.borough;
     try {
         const message = await db.getAllRestaurants(page, perPage, borough);
-        return res.status(202).json({ message: message });
+        return res.status(202).json({ message });
     } catch (error) {
         return res.status(400).send({message: error});
     }
