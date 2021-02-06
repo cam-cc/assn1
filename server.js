@@ -43,17 +43,13 @@ app.post("/api/restaurants",async(req,res) => {
     }
 })
 
-app.get("/api/restaurants",async (req, res) => {
-    var page = req.query.page;
-    var perPage = req.query.perPage;
-    var borough = req.query.borough;
-    try {
-        const message = await db.getAllRestaurants(page, perPage, borough);
-        return res.status(202).json({ message });
-    } catch (error) {
-        return res.status(400).send({message: error});
-    }
-})
+app.get('/api/restaurants',(req,res)=>{
+    db.getAllRestaurants(req.query.page,req.query.perPage).then((results)=>{
+        res.json(results);
+    }).catch((results)=>{
+        res.status(404).json({"message" : results.message});
+    })
+});
 app.get("/api/restaurants/:id",async (req, res) => {
     var id = req.params.id;
     try {
